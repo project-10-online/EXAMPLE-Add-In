@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multiplication Tables</title>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    <script src="./taskpane.js"></script>
+    <style>
+        .tab {
+            overflow: hidden;
+            border-bottom: 1px solid #add7fb;
+        }
+
+        .tab button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+
+        .tab button:hover {
+            background-color: #e4f3ff;
+        }
+
+        .tab button.active {
+            background-color: #add7fb;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 20px;
+        }
+
+        .tabcontent.active {
+            display: block;
+        }
+
+        #welcomeImage {
+            display: block;
+            width: 100%;        
+            max-width: 300px;   
+            height: auto;  
+            margin-bottom: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Excel add-in with tabs</h1>
+    <img id="welcomeImage" src="C:\Users\User\Documents\DimitarDocs\TimestableAddIn\7d143ffe-ad56-464b-8b14-dfd04b90529f.webp" alt="Welcome Image">
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'Settings')">Settings</button>
+        <button class="tablinks" onclick="openTab(event, 'CompanyReport')">Company Report</button>
+        <button class="tablinks" onclick="openTab(event, 'TimesTable')">Multiplication Table</button>
+    </div>
+    <div id="tabContentContainer">
+        <div id="TimesTable" class="tabcontent">
+            <h2>Multiplication Table</h2>
+            <label for="tableNumber">Enter a number for the timetable:</label>
+            <input type="number" id="tableNumber" min="1" />
+            <button onclick="generateTable()">Generate Table</button>
+        </div>
+    
+        <div id="Settings" class="tabcontent">
+            <h2>Settings</h2>
+            <p>Modify user profile settings here.</p>
+        </div>
+    
+        <div id="CompanyReport" class="tabcontent">
+            <h2>Company Report</h2>
+            <p>Search company report.</p>
+        </div>
+
+    </div>
+</body>
+</html>
